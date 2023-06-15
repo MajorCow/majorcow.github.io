@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-        function playVideo() {
-            var video = document.getElementById('myVideo');
-            video.play();
-        }
-    </script>
   <style>
+    video::-webkit-media-controls {
+            display: none;
+        }
+        video::-webkit-media-controls-enclosure {
+            display: none;
+        }
+        video::-webkit-media-controls-panel {
+            display: none;
+        }
+
     body {
       animation: breathing-gradient 8s ease-in-out infinite;
     }
@@ -21,14 +25,20 @@
       }
     }
   </style>
+  <script>
+    function playVideo() {
+        var video = document.getElementById('myVideo');
+        video.play();
+    }
+</script>
   <title>Play Local Video</title>
 </head>
 <body>
-    <video id="myVideo" controls preload="metadata" oncontextmenu="return false;">
-        <source src="https://cdn.mtdv.me/video/rick.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <button onclick="playVideo()">Play</button>
+  <video id="myVideo" preload="metadata">
+    <source src="https://cdn.mtdv.me/video/rick.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<button onclick="playVideo()">Play</button>
 </body>
 
 </html>
