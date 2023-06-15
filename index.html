@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <script>
+        function playVideo() {
+            var video = document.getElementById('myVideo');
+            video.play();
+        }
+    </script>
+  
   <style>
     body {
       animation: breathing-gradient 8s ease-in-out infinite;
@@ -18,56 +25,12 @@
   <title>Play Local Video</title>
 </head>
 <body>
-  <video src="https://cdn.mtdv.me/video/rick.mp4" id="MainVideovid" style="margin: auto; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.26) 0px 0px 20px 10px;" preload="auto"></video>
+   <video id="myVideo" controls preload="metadata">
+        <source src="https://cdn.mtdv.me/video/rick.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button onclick="playVideo()">Play</button>
+
 </body>
 
-  </script>
-            <button id="show_modal" style="display: none;" data-bs-toggle="modal" data-bs-target="#cookie_modal"></button>
-            <div class="modal fade" id="cookie_modal" tabindex="-1" aria-labelledby="modalTitleId" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitleId">We use Cookies</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                                    We use cookies! To continue please accept our 
-                                        
-                            <a href="https://r.mtdv.me/hags6#">Cookie Policy</a>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Customize</button>
-                            <button type="button" class="btn btn-primary" id="close_modal" data-bs-dismiss="modal">Accept</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script>
-                    // window.onscroll = function() {func()}
-        
-                    // function func(){
-                    //     var obj = document.getElementById('hero')
-                    //     obj.style.backgroundPositionY=`${document.documentElement.scrollTop*0.65-500}px`
-                    // };
-        
-                    window.onload = function() {
-                        document.getElementById("MainVideovid").preload='auto'
-                        document.getElementById("show_modal").click()
-                    }
-        
-                    click=0
-                    window.onclick = function() {
-                        if (click==1){
-                            document.getElementById("MainVideovid").play()
-                            document.getElementById("close_modal").click()
-                            document.getElementById("MainVideovid").style.display='';
-                            document.getElementById("MainVideodesc").style.display='';
-                            document.getElementById("MainVideovid").scrollIntoView();
-                        }
-                        click+=1
-                    }
-        
-                    var noRightClick = document.getElementById("MainVideovid");
-                    noRightClick.addEventListener("contextmenu", e => e.preventDefault());
-               </script>
 </html>
