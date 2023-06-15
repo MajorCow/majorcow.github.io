@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        function playVideo() {
+            var video = document.getElementById('myVideo');
+            video.play();
+        }
+    </script>
   <style>
     body {
       animation: breathing-gradient 8s ease-in-out infinite;
@@ -18,8 +24,11 @@
   <title>Play Local Video</title>
 </head>
 <body>
-    <video src="https://cdn.mtdv.me/video/rick.mp4" id="MainVideovid" style="margin: auto; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.26) 0px 0px 20px 10px;" preload="auto"></video>
-
+    <video id="myVideo" controls preload="metadata" oncontextmenu="return false;">
+        <source src="https://cdn.mtdv.me/video/rick.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button onclick="playVideo()">Play</button>
 </body>
 
 </html>
